@@ -3,20 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <title>Drop down menu |  Pure css</title>
-    </head>  
+     
     <style>
+
         .dropdown .list {
             display: none;
         }
-    </style>
 
+        .dropdown input {
+            display: none;
+        }
+
+        .dropdown input:checked + label + .list {
+            display: block;
+        }
+
+        .dropdown input:checked + label::after {
+            content: "◂" ;
+        }
+
+        .dropdown label {
+            /* new*/
+            user-select: none;
+        }
+
+        .dropdown label::after{
+            content: "▾";
+        }
+
+    </style>
+</head> 
 
 <body>
+    <!-- hw color bg color  box shadow :hover padding margin border border radius-->
+    <!-- css selectors FORWARD-->
     <nav class="dropdown">
+
+       
         
-        <lable>
-            Dropdown <input type="checkbox"/>
+        <lable for="toggler">
+            Dropdown ▾ 
         </lable>
+
+        <input type="checkbox" id="toggler"/>
 
         <ul class="list">
             <li> <a href=""> item 1</li>
@@ -27,5 +56,4 @@
 
 </body>
 
-    </head>
 </html>
